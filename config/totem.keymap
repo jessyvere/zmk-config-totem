@@ -18,10 +18,10 @@
 #define DE_Z KC_Y
 #define DE_Y KC_Z
 
-#define DE_SS KC_MINS
-#define DE_ADIA KC_QUOT
-#define DE_ODIA KC_SCLN
-#define DE_UDIA KC_LBRC
+#define DE_SS MINUS
+#define DE_ADIA SQT
+#define DE_ODIA SEMI
+#define DE_UDIA LBKT
 
 #define DE_CIRC KC_GRAVE // accent circumflex ^ and ring °
 #define DE_ACUT KC_EQL // accent acute ´ and grave `
