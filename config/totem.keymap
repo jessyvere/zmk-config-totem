@@ -105,7 +105,7 @@
         german_special {
             bindings = <
         &trans       &trans     &trans  &trans  &trans    &trans  &kp DE_UDIA  &trans  &kp DE_ODIA  &trans
-        &kp KC_QUOT  &kp DE_SS  &trans  &trans  &trans    &trans  &trans       &trans  &trans       &trans
+        &kp DE_ADIA  &kp DE_SS  &trans  &trans  &trans    &trans  &trans       &trans  &trans       &trans
 &trans  &trans       &trans     &trans  &trans  &trans    &trans  &trans       &trans  &trans       &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans       &trans
             >;
