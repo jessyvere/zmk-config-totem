@@ -91,40 +91,6 @@
         };
     };
 
-    behaviors {
-        backdel: backdel {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BACKDEL";
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
-
-        umlaut_sticky: umlaut_sticky {
-            compatible = "zmk,behavior-layer-sticky";
-            label = "UMLAUT_STICKY";
-            layer = </keymap/umlaute>;
-            preserve-mods;
-        };
-
-        rgui_uml: rgui_uml {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RGUI_UML";
-            bindings = <&kp RIGHT_GUI &umlaut_sticky>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        q_uit: q_uit {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp Q>, <&quit>;
-            
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -159,6 +125,42 @@
 
     keymap {
         compatible = "zmk,keymap";
+
+
+        behaviors {
+            backdel: backdel {
+                compatible = "zmk,behavior-mod-morph";
+                label = "BACKDEL";
+                bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+                #binding-cells = <0>;
+                mods = <(MOD_RSFT|MOD_LSFT)>;
+            };
+
+            umlaut_sticky: umlaut_sticky {
+                compatible = "zmk,behavior-layer-sticky";
+                label = "UMLAUT_STICKY";
+                layer = </keymap/umlaute>;
+                preserve-mods;
+            };
+
+            rgui_uml: rgui_uml {
+                compatible = "zmk,behavior-hold-tap";
+                label = "RGUI_UML";
+                bindings = <&kp RIGHT_GUI &umlaut_sticky>;
+
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+            };
+
+            q_uit: q_uit {
+                compatible = "zmk,behavior-mod-morph";
+                bindings = <&kp Q>, <&quit>;
+                
+                #binding-cells = <0>;
+                mods = <(MOD_LCTL|MOD_RCTL)>;
+            };
+        };
 
         // 0
         base {
