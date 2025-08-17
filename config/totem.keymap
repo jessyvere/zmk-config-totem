@@ -100,13 +100,13 @@
     key-overrides {
         ctrl_tab_to_alt_tab {
             bindings = <&kp TAB>;
-            when-mods = <(MOD_LCTL)>;
+            when-pressed = <&kp LCTL>;
             replace-mods = <(MOD_LALT)>;
         };
 
         ctrl_q_to_alt_f4 {
             bindings = <&kp F4>;
-            when-mods = <(MOD_LCTL)>;
+            when-pressed = <&kp LCTL>;
             replace-mods = <(MOD_LALT)>;
         };
 
@@ -169,9 +169,9 @@
         // 4
         fn_n_arrows {
             bindings = <
-        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8      &kp F9    &kp F10     &kp F11
-        &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT    &kp DOWN  &kp UP      &kp RIGHT  
-&kp F1  &trans  &trans  &trans  &trans  &trans  &trans  &bt BT_PRV  &trans    &bt BT_CLR  &bt BT_NXT  &kp F12
+        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8      &kp F9          &kp F10     &kp F11
+        &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT    &kp DOWN        &kp UP      &kp RIGHT  
+&kp F1  &trans  &trans  &trans  &trans  &trans  &trans  &bt BT_PRV  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_NXT  &kp F12
                         &trans  &trans  &trans  &trans  &trans      &trans
             >;
 
