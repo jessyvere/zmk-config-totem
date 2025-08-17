@@ -69,8 +69,9 @@
 
 / {
     macros {
+        compatible = "zmk,behavior-macro";
+
         quit: quit {
-            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
@@ -80,11 +81,9 @@
         };
 
         tab_app: tab_app {
-            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp TAB>
+                = <&macro_press &kp LALT &kp TAB>,
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT>
                 ;
@@ -128,7 +127,9 @@
         };
 
         ctrl_tab_combo {
-            timeout-ms = <50>;
+            timeout-ms = <300>;          // give yourself time to press Tab after holding D
+            slow-release;                // release macro only when BOTH D and Tab are released
+            layers = <0>;                // (optional) limit to base layer
             key-positions = <12 34>;
             bindings = <&tab_app>;
         };
