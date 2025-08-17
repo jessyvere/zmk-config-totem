@@ -101,17 +101,17 @@
             mods = <(MOD_RSFT|MOD_LSFT)>;
         };
 
-        umlaut_sticky: umlaut_sticky {
-            compatible = "zmk,behavior-layer-sticky";
-            label = "UMLAUT_STICKY";
-            layer = </keymap/umlaute>;
-            preserve-mods;
+        sl_preserve: sl_preserve {
+            compatible = "zmk,behavior-sticky-layer";
+            #binding-cells = <0>;
+            layer = 1;
+            preserve-mods; 
         };
 
         rgui_uml: rgui_uml {
             compatible = "zmk,behavior-hold-tap";
             label = "RGUI_UML";
-            bindings = <&kp RIGHT_GUI &umlaut_sticky>;
+            bindings = <&kp &sl_preserve>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
