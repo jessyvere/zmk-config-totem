@@ -167,13 +167,15 @@
         };
 
         // 4
-        fn+arrows {
+        fn_n_arrows {
             bindings = <
-        &kp F2  &kp F3  &kp F4  &kp F5   &kp F6    &kp F7  &kp F8    &kp F9    &kp F10  &kp F11
-        &trans  &trans  &trans  &trans   &trans    &trans  &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  
-&kp F1  &trans  &trans  &trans  &trans   &trans    &trans  &trans    &trans    &trans   &trans     &kp F12
-                        &trans  &BT_CLR  &trans    &trans  &trans    &trans
+        &kp F2  &kp F3  &kp F4  &kp F5      &kp F6    &kp F7  &kp F8    &kp F9    &kp F10  &kp F11
+        &trans  &trans  &trans  &trans      &trans    &trans  &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  
+&kp F1  &trans  &trans  &trans  &trans      &trans    &trans  &trans    &trans    &trans   &trans     &kp F12
+                        &trans  &bt BT_CLR  &trans    &trans  &trans    &trans
             >;
+
+            label = "_nav";
         };
 
         // 5
