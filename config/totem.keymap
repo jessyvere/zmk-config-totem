@@ -83,7 +83,8 @@
         tab_app: tab_app {
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT &kp TAB>,
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT>
                 ;
