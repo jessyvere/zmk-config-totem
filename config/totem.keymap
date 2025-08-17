@@ -102,6 +102,8 @@
         q_uit: q_uit {
             compatible = "zmk,behavior-mod-morph";
             bindings = <&kp Q>, <&quit>;
+            
+            #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
     };
