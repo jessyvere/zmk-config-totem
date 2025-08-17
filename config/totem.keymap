@@ -104,7 +104,7 @@
         sl_preserve: sl_preserve {
             compatible = "zmk,behavior-sticky-layer";
             #binding-cells = <0>;
-            layer = 1;
+            layer = <1>;
             preserve-mods; 
         };
 
