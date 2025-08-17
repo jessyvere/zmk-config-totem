@@ -104,7 +104,7 @@
         umlaut_sticky: umlaut_sticky {
             compatible = "zmk,behavior-layer-sticky";
             label = "UMLAUT_STICKY";
-            layer = <&_uml>;
+            layer = </keymap/umlaute>;
             preserve-mods;
         };
 
