@@ -85,6 +85,12 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        q_uit: q_uit {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&kp Q>, <&kp quit>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
     };
 
 
@@ -100,13 +106,7 @@
     key-overrides {
         ctrl_tab_to_alt_tab {
             bindings = <&kp TAB>;
-            when-pressed = <&kp LCTL>;
-            replace-mods = <(MOD_LALT)>;
-        };
-
-        ctrl_q_to_alt_f4 {
-            bindings = <&kp F4>;
-            when-pressed = <&kp LCTL>;
+            when-mods = <&kp LCTL>;
             replace-mods = <(MOD_LALT)>;
         };
 
@@ -117,13 +117,24 @@
         };
     };
 
+    macros {
+        quit: quit {
+            compatible = "zmk,behavior-macro";
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp F4
+                , <&macro_release &kp LALT>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         // 0
         base {
             bindings = <
-       &kp Q           &kp W           &kp E        &kp R        &kp T      &kp DE_Z   &kp U        &kp I        &kp O            &kp P
+       &kp q_uit       &kp W           &kp E        &kp R        &kp T      &kp DE_Z   &kp U        &kp I        &kp O            &kp P
        &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H      &mt RSHFT J  &mt RCTRL K  &mt RIGHT_ALT L  &rgui_uml RIGHT_GUI 1
 &mo 2  &kp DE_Y        &kp X           &kp C        &kp V        &kp B      &kp N      &kp M        &kp COMMA    &kp DE_MINS      &trans                 &backdel
                                        &mo 4        &lt 3 ESC    &kp TAB    &kp SPACE  &lt 3 ENTER  &trans
