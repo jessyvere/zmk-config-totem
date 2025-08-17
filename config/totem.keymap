@@ -68,6 +68,14 @@
 
 
 / {
+    layers {
+        umlaute_layer: umlaute_layer {
+            compatible = "zmk,behavior-layer-sticky";
+            label = "_umlaute";
+            preserve-mods; 
+        };
+    };
+
     macros {
         quit: quit {
         compatible = "zmk,behavior-macro";
@@ -104,9 +112,9 @@
         rgui_uml: rgui_uml {
             compatible = "zmk,behavior-hold-tap";
             label = "RGUI_UML";
-            bindings = <&kp>, <&sl>;
+            bindings = <&kp RIGHT_GUI>, <&umlaute_layer>;
 
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
         };
 
@@ -157,8 +165,8 @@
         base {
             bindings = <
        &q_uit          &kp W           &kp E        &kp R        &kp T      &kp DE_Z   &kp U        &kp I        &kp O            &kp P
-       &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H      &mt RSHFT J  &mt RCTRL K  &mt RIGHT_ALT L  &rgui_uml RIGHT_GUI 1
-&mo 2  &kp DE_Y        &kp X           &kp C        &kp V        &kp B      &kp N      &kp M        &kp COMMA    &kp DE_MINS      &trans                 &backdel
+       &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H      &mt RSHFT J  &mt RCTRL K  &mt RIGHT_ALT L  &rgui_uml  
+&mo 2  &kp DE_Y        &kp X           &kp C        &kp V        &kp B      &kp N      &kp M        &kp COMMA    &kp DE_MINS      &trans     &backdel
                                        &mo 4        &lt 3 ESC    &kp TAB    &kp SPACE  &lt 3 ENTER  &trans
             >;
         };
