@@ -111,7 +111,7 @@
         rgui_uml: rgui_uml {
             compatible = "zmk,behavior-hold-tap";
             label = "RGUI_UML";
-            bindings = <&kp RGUI>, &sl_preserve;
+            bindings = <&kp RGUI>, <&sl_preserve>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
