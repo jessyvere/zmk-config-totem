@@ -96,6 +96,15 @@
         };
     };
 
+    key-overrides {
+        ctrl_tab_to_alt_tab {
+            compatible = "zmk,key-override";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>; 
+            when-mods = <(MOD_LCTL)>; 
+            replace-mods = <(MOD_LALT)>;
+        }
+
     keymap {
         compatible = "zmk,keymap";
 
