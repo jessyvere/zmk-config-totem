@@ -113,8 +113,9 @@
 
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <2 34>; // lctrl (12) + tab
-            bindings = <&kp LALT>;
+            key-positions = <0 1>; // lctrl (12) + tab (34)
+            bindings = <&kp DE_TILD>; // LALT
+            layers = <0>;
             slow-release;
         };
 
