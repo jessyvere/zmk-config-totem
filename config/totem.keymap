@@ -112,7 +112,7 @@
         compatible = "zmk,combos";
 
         combo_tab {
-            timeout-ms = <50>;
+            timeout-ms = <300>;
             key-positions = <0 1>; // lctrl (12) + tab (34)
             bindings = <&kp DE_TILD>; // LALT
             layers = <0>;
