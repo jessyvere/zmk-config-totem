@@ -97,7 +97,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&sl>;
             display-name = "Rgui and Umlaute";
-
         };
 
         q_uit: q_uit {
@@ -149,10 +148,10 @@
         // 1
         umlaute {
             bindings = <
-        &trans       &trans     &trans  &trans  &trans  &trans  &kp DE_UDIA  &trans  &kp DE_ODIA  &trans
-        &kp DE_ADIA  &kp DE_SS  &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans
-&trans  &trans       &trans     &trans  &trans  &trans  &trans  &trans       &trans  &trans       &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans       &trans
+        &trans       &trans     &trans  &trans     &trans  &trans  &kp DE_UDIA  &trans  &kp DE_ODIA  &trans
+        &kp DE_ADIA  &kp DE_SS  &trans  &kp LSHFT  &trans  &trans  &kp RSHFT    &trans  &trans       &trans
+&trans  &trans       &trans     &trans  &trans     &trans  &trans  &trans       &trans  &trans       &trans  &trans
+                                &trans  &trans     &trans  &trans  &trans       &trans
             >;
 
             label = "_uml";
