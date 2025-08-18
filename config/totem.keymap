@@ -141,7 +141,7 @@
             bindings = <
        &q_uit      &kp W       &kp E        &kp R        &kp T    &kp DE_Z   &kp U        &kp I        &kp O       &kp P
        &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G    &kp H      &mt RSHFT J  &mt RCTRL K  &mt RALT L  &rgui_uml RGUI 1
-&mo 2  &kp DE_Y    &kp X       &kp C        &kp V        &kp B    &kp N      &kp M        &kp COMMA    &kp DOT     &DE_MINS          &backdel
+&mo 2  &kp DE_Y    &kp X       &kp C        &kp V        &kp B    &kp N      &kp M        &kp COMMA    &kp DOT     &kp DE_MINS       &backdel
                                &mo 4        &lt 3 ESC    &kp TAB  &kp SPACE  &lt 3 ENTER  &trans
             >;
         };
