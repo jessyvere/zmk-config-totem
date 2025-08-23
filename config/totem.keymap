@@ -70,6 +70,10 @@
    ignore-modifiers;
 };
 
+&caps_word {
+    continue-list = <DE_MINS DE_UNDS LSHFT BACKSPACE DELETE>;
+};
+
 / {
     macros {
         quit: quit {
@@ -78,6 +82,17 @@
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp F4>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        app_switch: app_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
+                , <&macro_pause_for_release>
                 , <&macro_release &kp LALT>
                 ;
         };
@@ -117,7 +132,7 @@
         combo_tab {
             timeout-ms = <300>;
             key-positions = <12 34>; // lctrl (12) + tab (34)
-            bindings = <&kp LALT>, <&kp TAB>; // LALT
+            bindings = <&app_switch>; // LALT
             layers = <0>;
             slow-release;
         };
