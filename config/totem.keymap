@@ -70,6 +70,10 @@
     continue-list = <DE_MINS BACKSPACE DELETE>;
 };
 
+&sl {
+   /delete-property/ ignore-modifiers;
+};
+
 / {
     macros {
         quit: quit {
@@ -116,8 +120,8 @@
 
         combo_tab {
             timeout-ms = <300>;
-            key-positions = <0 1>; // lctrl (12) + tab (34)
-            bindings = <&kp DE_TILD>; // LALT
+            key-positions = <12 34>; // lctrl (12) + tab (34)
+            bindings = <&kp LALT>; // LALT
             layers = <0>;
             slow-release;
         };
