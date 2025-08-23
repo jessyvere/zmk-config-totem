@@ -66,12 +66,8 @@
     flavor = "tap-preferred";
 };
 
-&caps_word {
-    continue-list = <DE_MINS BACKSPACE DELETE>;
-};
-
 &sl {
-   /delete-property/ ignore-modifiers;
+   ignore-modifiers;
 };
 
 / {
@@ -121,7 +117,7 @@
         combo_tab {
             timeout-ms = <300>;
             key-positions = <12 34>; // lctrl (12) + tab (34)
-            bindings = <&kp LALT>; // LALT
+            bindings = <&kp LALT>, <&kp TAB>; // LALT
             layers = <0>;
             slow-release;
         };
