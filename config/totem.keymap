@@ -137,6 +137,13 @@
             slow-release;
         };
 
+        combo_caps_word {
+            timeout-ms = <100>;
+            key-positions = <13 16>; // rshft (13) + lshift (16)
+            bindings = <&caps_word>;
+            layers = <0>;
+        };
+
         activate_mouse {
             bindings = <&tog 5>;
             key-positions = <35 34>;
