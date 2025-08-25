@@ -63,7 +63,7 @@
 #define DE_PIPE RA(DE_LABK) // |
 
 &mt {
-    flavor = "tap-preferred";
+   tapping-term-ms = <230>;
 };
 
 &sl {
@@ -201,7 +201,7 @@
             &trans       &trans       &kp DE_EXLM  &kp DE_LABK  &kp DE_LBRC  &kp DE_RBRC  &kp DE_RABK  &kp DE_QUES  &trans      &trans
             &kp DE_SECT  &kp DE_SLSH  &kp DE_PIPE  &kp DE_BSLS  &kp DE_LCBR  &kp DE_RCBR  &kp DE_DQUO  &kp DE_QUOT  &kp DE_GRV  &trans
 &caps_word  &trans       &kp DE_DLR   &kp DE_EURO  &kp DE_PERC  &kp DE_LPRN  &kp DE_RPRN  &kp DE_CIRC  &kp DE_TILD  &trans      &trans  &trans
-                                        &trans       &trans       &kp DE_HASH  &kp DE_AT    &trans       &trans
+                                        &trans     &trans     &kp DE_HASH  &kp DE_AT    &trans       &trans
             >;
 
             label = "_sym";
@@ -210,10 +210,10 @@
         // 4
         fn_n_arrows {
             bindings = <
-        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8      &kp F9          &kp F10     &kp F11
-        &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT    &kp DOWN        &kp UP      &kp RIGHT  
-&kp F1  &trans  &trans  &trans  &trans  &trans  &trans  &bt BT_PRV  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_NXT  &kp F12
-                        &trans  &trans  &trans  &trans  &trans      &trans
+        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7      &kp F8          &kp F9      &kp F10     &kp F11
+        &trans  &trans  &trans  &trans  &trans  &kp LEFT    &kp DOWN        &kp UP      &kp RIGHT   &trans  
+&kp F1  &trans  &trans  &trans  &trans  &trans  &bt BT_PRV  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_NXT  &trans   &kp F12
+                        &trans  &trans  &trans  &trans      &trans          &trans
             >;
 
             label = "_nav";
