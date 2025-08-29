@@ -60,14 +60,15 @@
 #define DE_AT  RA(Q) // @
 #define DE_EURO RA(E) // €
 #define DE_TILD RA(DE_PLUS) // ~
-#define DE_PIPE LA(DE_LABK) // |
+#define DE_PIPE RA(DE_LABK) // |
 
 &mt {
-   tapping-term-ms = <230>;
+    tapping-term-ms = <230>;
+    flavor = "tap-preferred";
 };
 
 &sl {
-   ignore-modifiers;
+    ignore-modifiers;
 };
 
 &caps_word {
@@ -94,6 +95,16 @@
                 , <&macro_tap &kp TAB>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT>
+                ;
+        };
+
+        macro_interrupt: macro_interrupt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTL>
                 ;
         };
     };
@@ -124,6 +135,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
+
+        interrupt: interrupt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&macro_interrupt>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
     };
 
     combos {
@@ -147,14 +165,6 @@
         activate_mouse {
             bindings = <&tog 5>;
             key-positions = <35 34>;
-        };
-    };
-
-    key-overrides {
-        alt_c_to_ctrl_c {
-            bindings = <&kp C>;
-            when-mods = <(MOD_LALT)>;
-            replace-mods = <(MOD_LCTL)>;
         };
     };
 
