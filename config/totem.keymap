@@ -97,16 +97,6 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-
-        macro_interrupt: macro_interrupt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTL>
-                , <&macro_tap &kp C>
-                , <&macro_release &kp LCTL>
-                ;
-        };
     };
 
     behaviors {
@@ -139,7 +129,7 @@
         interrupt: interrupt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp C>, <&macro_interrupt>;
+            bindings = <&kp C>, <&kp LC(C)>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
     };
