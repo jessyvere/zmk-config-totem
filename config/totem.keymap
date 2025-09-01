@@ -98,10 +98,15 @@
                 ;
         };
 
-        macro_interrupt: macro_interrupt {
+        interrupt: interrupt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
+            bindings
+                = <&macro_release &kp LALT>
+                , <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
         };
     };
 
@@ -132,11 +137,11 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        interrupt: interrupt {
+        copy: copy {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp C>, <&macro_interrupt>;
-            mods = <MOD_LALT>;
+            bindings = <&kp ESC>, <&kp C>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
     };
 
@@ -146,7 +151,7 @@
         combo_tab {
             timeout-ms = <300>;
             key-positions = <12 34>; // lctrl (12) + tab (34)
-            bindings = <&app_switch>; // LALT
+            bindings = <&app_switch>;
             layers = <0>;
             slow-release;
         };
@@ -155,6 +160,13 @@
             timeout-ms = <100>;
             key-positions = <13 16>; // rshft (13) + lshift (16)
             bindings = <&caps_word>;
+            layers = <0>;
+        };
+
+        combo_interrupt {
+            timeout-ms = <300>;
+            key-positions = <11 23>; // lalt + c
+            bindings = <&interrupt>;
             layers = <0>;
         };
 
@@ -216,10 +228,10 @@
         // 4
         fn_n_arrows {
             bindings = <
-        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8      &kp F9          &kp F10     &kp F11
-        &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT    &kp DOWN        &kp UP      &kp RIGHT   
-&kp F1  &trans  &trans  &trans  &trans  &trans  &trans  &bt BT_PRV  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_NXT  &kp F12
-                        &trans  &trans  &trans  &trans  &trans      &trans
+        &kp F2  &kp F3  &kp F4      &kp F5          &kp F6      &kp F7      &kp F8    &kp F9    &kp F10  &kp F11
+        &trans  &trans  &trans      &trans          &trans      &trans      &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT   
+&kp F1  &trans  &trans  &bt BT_PRV  &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_NXT  &trans    &trans    &trans   &trans     &kp F12
+                        &trans      &trans          &trans      &trans      &trans    &trans
             >;
 
             label = "_nav";
