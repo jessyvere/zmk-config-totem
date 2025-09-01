@@ -143,11 +143,11 @@
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp C>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
-        }
+        };
 
         lt_esc: copy {
             compatible = "zmk,behavior-hold-tap";
-            label = "COPY"
+            label = "COPY";
             #binding-cells = <2>;
             bindings = <&mo>, <&esc_c>;
         };
