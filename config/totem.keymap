@@ -25,7 +25,7 @@
 #define DE_UDIA LBKT // ü
 
 #define DE_CIRC GRAVE // accent circumflex ^ and ring °
-#define DE_ACUT KP_EQUAL // accent acute ´ and grave `
+#define DE_ACUT EQUAL // accent acute ´ and grave `
 #define DE_PLUS RBKT // + and * and ~
 #define DE_HASH BSLH // # and '
 #define DE_LABK NUBS // < and > and |
@@ -143,6 +143,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
         lt_esc: copy {
