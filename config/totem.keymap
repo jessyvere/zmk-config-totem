@@ -137,21 +137,29 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        esc_c: esc_c {
+        esc_v: esc_v {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp ESC>, <&kp C>;
+            bindings = <&kp ESC>, <&kp V>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        lt_esc: copy {
+        lt_esc_v: lt_esc_v {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&esc_c>;
+            bindings = <&mo>, <&esc_v>;
+        };
+        
+        lt_kp: copy {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -192,10 +200,10 @@
         // 0
         base {
             bindings = <
-       &q_uit      &kp W       &kp E        &kp R        &kp T    &kp DE_Z   &kp U        &kp I        &kp O       &kp P
-       &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G    &kp H      &mt RSHFT J  &mt RCTRL K  &mt RALT L  &rgui_uml RGUI 1
-&mo 2  &kp DE_Y    &kp X       &kp C        &kp V        &kp B    &kp N      &kp M        &kp COMMA    &kp DOT     &kp DE_MINS       &backdel
-                               &mo 4        &lt_esc 3 0  &kp TAB  &kp SPACE  &lt 3 ENTER  &mo 4
+       &q_uit      &kp W       &kp E        &kp R          &kp T    &kp DE_Z   &kp U        &kp I        &kp O       &kp P
+       &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F    &kp G    &kp H      &mt RSHFT J  &mt RCTRL K  &mt RALT L  &rgui_uml RGUI 1
+&mo 2  &kp DE_Y    &kp X       &kp C        &kp V          &kp B    &kp N      &kp M        &kp COMMA    &kp DOT     &kp DE_MINS       &backdel
+                               &lt_kp 4 C   &lt_esc_v 3 0  &kp TAB  &kp SPACE  &lt 3 ENTER  &mo 4
             >;
         };
 
@@ -214,10 +222,10 @@
         // 2
         numpad {
             bindings = <
-        &trans  &trans  &trans  &trans     &trans   &kp DE_PLUS  &kp N7  &kp N8  &kp N9  &kp DE_ASTR
-        &trans  &trans  &trans  &trans     &trans   &kp DE_MINS  &kp N4  &kp N5  &kp N6  &kp DE_SLSH
-&trans  &trans  &trans  &trans  &trans     &trans   &trans       &kp N1  &kp N2  &kp N3  &trans       &trans
-                        &trans  &kp COMMA  &kp DOT  &kp DE_EQL   &trans  &kp N0
+        &trans  &trans       &trans       &trans       &trans       &trans      &kp N7  &kp N8  &kp N9  &trans
+        &trans  &kp DE_PLUS  &kp DE_MINS  &kp DE_ASTR  &kp DE_SLSH  &trans      &kp N4  &kp N5  &kp N6  &trans
+&trans  &trans  &trans       &trans       &trans       &trans       &trans      &kp N1  &kp N2  &kp N3  &trans &trans
+                             &trans       &kp COMMA    &kp DOT      &kp DE_EQL  &kp N0  &trans
             >;
 
             label = "_num";
