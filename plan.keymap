@@ -1,0 +1,93 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+/ {
+    behaviors {
+        backspacedelete: backspacedelete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACEDELETE";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        rgui_uml: rgui_uml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RGUI_UML";
+            bindings = <&kp>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        activate_mouse {
+            bindings = <&tog 5>;
+            key-positions = <35 34>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base {
+            bindings = <
+       &kp Q           &kp W           &kp E        &kp R        &kp T      &kp Z      &kp U        &kp I        &kp O            &kp P
+       &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHFT F  &kp G      &kp H      &mt RSHFT J  &mt RCTRL K  &mt RIGHT_ALT L  &rgui_uml RIGHT_GUI 1
+&mo 2  &kp Y           &kp X           &kp C        &kp V        &kp B      &kp N      &kp M        &kp COMMA    &kp DOT          &kp MINUS              &backspacedelete
+                                       &mo 4        &lt 3 ESC    &kp TAB    &kp SPACE  &lt 3 ENTER  &mo 4
+            >;
+        };
+
+        german_special {
+            bindings = <
+        &trans  &trans  &trans  &trans          &trans    &trans  &kp U           &trans  &kp O   &trans
+        &kp A   &kp S   &trans  &kp LEFT_SHIFT  &trans    &trans  &kp LEFT_SHIFT  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans    &trans  &trans          &trans  &trans  &trans  &trans
+                        &trans  &trans          &trans    &trans  &trans          &trans
+            >;
+        };
+
+        numpad {
+            bindings = <
+        &trans  &trans      &trans      &trans          &trans        &trans     &kp N7  &kp N8  &kp N9  &trans
+        &trans  &kp PLUS    &kp MINUS   &kp ASTERISK    &kp SLASH     &trans     &kp N4  &kp N5  &kp N6  &trans
+&trans  &trans  &bt BT_PRV  &bt BT_CLR  &bt BT_CLR_ALL  &bt BT_NXT    &trans     &kp N1  &kp N2  &kp N3  &trans  &trans
+                            &trans      &kp COMMA       &kp DOT       &kp EQUAL  &kp N0  &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+        &trans            &trans             &kp EXCLAMATION   &kp LESS_THAN  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp GREATER_THAN  &kp QUESTION  &trans         &trans
+        &kp LS(NUMBER_3)  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE      &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp SLASH         &kp PIPE      &kp BACKSLASH  &trans
+&trans  &kp E             &kp DOLLAR         &kp PERCENT       &trans         &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp CARET         &kp TILDE     &trans         &trans  &kp RIGHT_ARROW
+                                             &kp AMPERSAND     &trans         &kp HASH                &kp AT                 &trans            &kp PIPE
+            >;
+        };
+
+        fn+arrows {
+            bindings = <
+        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7    &kp F8    &kp F9  &kp F10    &kp F11
+        &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&kp F1  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans   &kp F12
+                        &trans  &trans  &trans    &trans    &trans    &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+       &none  &none  &none  &none           &none        &none      &none      &none      &none      &none
+       &none  &none  &none  &kp KP_NUMLOCK  &mkp MCLK    &none      &mkp LCLK  &mkp RCLK  &mkp MCLK  &none
+&none  &none  &none  &none  &none           &none        &none      &none      &none      &none      &none  &none
+                     &none  &none           &to 0        &mkp LCLK  &mkp RCLK  &mkp MCLK
+            >;
+        };
+    };
+};
