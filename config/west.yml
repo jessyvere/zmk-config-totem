@@ -11,5 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-hid-trackball-interface
       path: modules/zmk-hid-trackball-interface
+      url: null
   self:
     path: config
