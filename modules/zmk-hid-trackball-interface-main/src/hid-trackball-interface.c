@@ -77,7 +77,7 @@ static void cycle_dpi() {
 }
 
 static void activate_automouse_layer() {
-    zmk_keymap_layer_activate(config.automouse_layer);
+    zmk_keymap_layer_activate(config.automouse_layer, true);
     LOG_INF("mouse layer activated");
     data.automouse_enabled = true;
 }
